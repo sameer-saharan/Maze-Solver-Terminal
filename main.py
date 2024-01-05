@@ -8,8 +8,8 @@ def print_maze(maze):
 def main():
     while True:
         try:
-            size = int(input("Enter the size of the maze: "))
-            wall_percentage = int(input("Enter the wall percentage (0-100): "))
+            size = int(input("Enter the size of the maze (n * n): "))
+            wall_percentage = size//2
             
             maze = generate_maze(size, wall_percentage)
             
@@ -17,34 +17,25 @@ def main():
             print_maze(maze)
             
             solved_maze = find_path([row[:] for row in maze])  # Clone maze for pathfinding
-            if solved_maze:
-                print("\nSolved Maze:")
-                print_maze(solved_maze)
-            else:
-                print("\nNo path found.")
             
-            choice = input("Options: (1)Print Path, (2)Generate Another Puzzle, (3)Exit: ").lower()
-            if choice == '1':
-                print("\nPath:")
-                print_maze(solved_maze)
-            elif choice == '2':
-                continue
-            elif choice == '3':
-                break
-            else:
-                print("Invalid option. Please try again.")
-
-            while True: 
-                choice = input("Options:(2)Generate Another Puzzle, (3)Exit: ").lower()
-                if choice == '2':
+            while True:
+                choice = input("Options:\n1. Print the path \n2. Generate Another Puzzle \n3. Exit the game \nEnter your choice(1/2/3): ").lower()
+                if choice == '1':
+                    if solved_maze:
+                        print("\nSolved Maze:")
+                        print_maze(solved_maze)
+                    else:
+                        print("\nNo path found.")
+                elif choice == '2':
                     break
                 elif choice == '3':
+                    print("Exiting the Game. Goodbye!")
                     return
                 else:
-                    print("Invalid option. Please try again.")
-        
+                    print("Invalid option, Please try again.")
+
         except ValueError:
-            print("Invalid input. Please enter valid integers.")
+            print("Invalid input, Please enter a valid integer.")
 
 if __name__ == "__main__":
     main()
