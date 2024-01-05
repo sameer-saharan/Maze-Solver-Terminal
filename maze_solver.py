@@ -1,5 +1,11 @@
 import queue
 
+# codes for colors
+GREEN = '\033[92m'
+RED = '\033[91m'
+BLUE = '\033[94m'
+END_COLOR = '\033[0m'
+
 def find_path(maze):
     start = (0, 0)
     end = (len(maze)-1, len(maze[0])-1)
@@ -22,7 +28,7 @@ def find_path(maze):
         neighbors = [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]
         for neighbor in neighbors:
             nx, ny = neighbor
-            if 0 <= nx < len(maze) and 0 <= ny < len(maze[0]) and maze[nx][ny] != '▓' and (nx, ny) not in visited:
+            if 0 <= nx < len(maze) and 0 <= ny < len(maze[0]) and maze[nx][ny] != RED + '▓' + END_COLOR and (nx, ny) not in visited:
                 q.put((nx, ny))
                 visited.add((nx, ny))
                 path[(nx, ny)] = current
@@ -34,7 +40,7 @@ def find_path(maze):
     current = end
     while current != start:
         x, y = current
-        maze[x][y] = '◍' 
+        maze[x][y] = GREEN + '◍' + END_COLOR  # Marking the path in green
         current = path[current]
     
     return maze
