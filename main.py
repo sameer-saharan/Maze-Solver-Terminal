@@ -23,13 +23,13 @@ def main():
             else:
                 print("\nNo path found.")
             
-            choice = input("Options: (P)rint Path, (G)enerate Another Puzzle, (E)xit: ").lower()
-            if choice == 'p':
+            choice = input("Options: (1)Print Path, (2)Generate Another Puzzle, (3)Exit: ").lower()
+            if choice == '1':
                 print("\nPath:")
                 print_maze(solved_maze)
-            elif choice == 'g':
+            elif choice == '2':
                 continue
-            elif choice == 'e':
+            elif choice == '3':
                 break
             else:
                 print("Invalid option. Please try again.")
