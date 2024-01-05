@@ -33,6 +33,15 @@ def main():
                 break
             else:
                 print("Invalid option. Please try again.")
+
+            while True: 
+                choice = input("Options:(2)Generate Another Puzzle, (3)Exit: ").lower()
+                if choice == '2':
+                    continue
+                elif choice == '3':
+                    break
+                else:
+                    print("Invalid option. Please try again.")
         
         except ValueError:
             print("Invalid input. Please enter valid integers.")
