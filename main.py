@@ -37,9 +37,9 @@ def main():
             while True: 
                 choice = input("Options:(2)Generate Another Puzzle, (3)Exit: ").lower()
                 if choice == '2':
-                    continue
-                elif choice == '3':
                     break
+                elif choice == '3':
+                    return
                 else:
                     print("Invalid option. Please try again.")
         
