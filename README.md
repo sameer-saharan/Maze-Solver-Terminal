@@ -1,4 +1,4 @@
-# Maze-Solver
+# Maze-Solver-Terminal
 Terminal Based Maze Solver
 <br>
 Run "main.py" File in Terminal.
