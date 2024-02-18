@@ -1,6 +1,6 @@
 # Maze-Solver-Terminal
 Terminal Based Maze Solver
 <br>
-Run "main.py" File in Terminal.
+<b>Run "main.py" File in Terminal.</b>
 <br>
 Author: Sameer (cap02_041)
